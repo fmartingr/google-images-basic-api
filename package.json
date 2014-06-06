@@ -1,0 +1,21 @@
+{
+  "name": "google-images-basic-api",
+  "version": "0.1.0",
+  "description": "Exposes basic Google Images API",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.4.1"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.7.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://fmartingr@github.com/fmartingr/google-images-basic-api.git"
+  },
+  "author": "Felipe Martin",
+  "license": "GPLv2"
+}
