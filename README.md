@@ -7,8 +7,8 @@ Google Images Basic API
 
 
 ```
-~
-❯ curl http://localhost:5000/hello/
+<- curl http://localhost:5000/?q=hello
+->
 {
     "error": null,
     "items": [
@@ -16,8 +16,8 @@ Google Images Basic API
     ]
 }
 
-~
-❯ curl http://localhost:5000/hello/\?limit\=4
+<- curl http://localhost:5000/?q=hello&limit=4
+->
 {
     "error": null,
     "items": [
@@ -34,8 +34,8 @@ Google Images Basic API
 ## USAGE
 
 ```
-/<search query>/
+?q=<search query>
 or
-/<search query>/?limit=<results number>
+?q=<search query>&limit=<results number>
 
 ```

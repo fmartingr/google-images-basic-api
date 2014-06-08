@@ -2,10 +2,9 @@ express = require 'express'
 app = express()
 googleImages = require './api/googleImages'
 
-app.get '/:q', (request, response) ->
-    googleImages.search request.params.q, (images) ->
+app.get '/', (request, response) ->
+    googleImages.search request.query.q, (images) ->
         numResults = 1
-        console.log request.query
         if request.query.limit?
             numResults = parseInt(request.query.limit)
 
@@ -15,7 +14,6 @@ app.get '/:q', (request, response) ->
 
         if images?
             for i in [0..numResults-1]
-                console.log i
                 if images['results'][i]?
                     url = images['results'][i]['unescapedUrl']
                     result.items.push url
