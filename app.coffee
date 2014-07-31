@@ -1,8 +1,10 @@
+require 'coffee-script'
 express = require 'express'
 app = express()
 googleImages = require './api/googleImages'
 
 app.get '/', (request, response) ->
+    response.setHeader "Access-Control-Allow-Origin", "*"
     googleImages.search request.query.q, (images) ->
         numResults = 1
         if request.query.limit?
@@ -23,5 +25,6 @@ app.get '/', (request, response) ->
         response.end
 
 
-console.log 'Listening on port 5000'
-app.listen(5000)
+port = process.env.VCAP_APP_PORT || 3000
+console.log "Listening on port #{port}"
+app.listen(port)
